@@ -3,8 +3,8 @@ using std::cerr;
 using std::cout;
 using std::endl;
 
-#include "ToDo.h"
-using ToDoCore::ToDo;
+#include "BlackBoxMath.hpp"
+using bbm::ToDo;
 
 #define EXPECT_EQUAL(test, expect) equalityTest( test,  expect, \
                                                 #test, #expect, \

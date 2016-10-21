@@ -26,7 +26,7 @@ add_subdirectory(Tests)
 # Creates an executable using the specified cpp files
 add_executable(BlackBoxMath Source/Main.cpp)
 # Creates a library from the specified cpp files
-add_library(BlackBoxMathLibrary Source/ToDo.cc)
+add_library(BlackBoxMathLibrary Source/BlackBoxMath.cpp)
 
 # Links a library to a specified executable
 target_link_libraries(BlackBoxMath BlackBoxMathLibrary)
