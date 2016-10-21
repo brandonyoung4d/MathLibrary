@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 project("BlackBoxMath")
 enable_testing()
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake/Modules)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake)
 include(GoogleTestModule)
 
 # Check for Windows or macOS compiler
@@ -19,8 +19,9 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-add_subdirectory(BlackBoxMathLibrary)
-add_executable(BlackBoxMath main.cpp)
+add_subdirectory(Tests)
+add_executable(BlackBoxMath Source/Main.cpp)
+add_library(BlackBoxMathLibrary Source/ToDo.cc)
 
 target_link_libraries(BlackBoxMath BlackBoxMathLibrary)
 
