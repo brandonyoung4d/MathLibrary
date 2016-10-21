@@ -1,3 +1,2 @@
-add_library(toDoCore ToDo.cc)
-
+add_library(BlackBoxMathLibrary ToDo.cc)
 add_subdirectory(unit_test)

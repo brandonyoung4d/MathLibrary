@@ -1,2 +1,2 @@
 add_google_test(ToDoTest ToDoTest.cc)
-target_link_libraries(ToDoTest toDoCore)
+target_link_libraries(ToDoTest BlackBoxMathLibrary)
