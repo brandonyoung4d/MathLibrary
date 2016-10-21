@@ -1,10 +1,10 @@
 #include <iostream>
-  using std::cerr;
-  using std::cout;
-  using std::endl;
+using std::cerr;
+using std::cout;
+using std::endl;
 
-#include "ToDoCore/ToDo.h"
-  using ToDoCore::ToDo;
+#include "BlackBoxMathLibrary/ToDo.h"
+using ToDoCore::ToDo;
 
 #define EXPECT_EQUAL(test, expect) equalityTest( test,  expect, \
                                                 #test, #expect, \
