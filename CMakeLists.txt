@@ -28,5 +28,7 @@ add_executable(BlackBoxMath Source/Main.cpp)
 # Creates a library from the specified cpp files
 add_library(BlackBoxMathLibrary Source/BlackBoxMath.cpp)
 
+set_property(TARGET BlackBoxMathLibrary PROPERTY CXX_STANDARD 14)
+
 # Links a library to a specified executable
 target_link_libraries(BlackBoxMath BlackBoxMathLibrary)
