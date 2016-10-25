@@ -20,5 +20,5 @@ The focus of this project is to help relearn how matrices and vertices work.
 
 ## Who do I talk to?
 
-* Rep owner: Brandon Young
+* Repo owner: Brandon Young
 * You!
