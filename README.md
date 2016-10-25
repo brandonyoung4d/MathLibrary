@@ -11,6 +11,7 @@ The focus of this project is to help relearn how matrices and vertices work.
 ## How do I get set up?
 
 * Use CMake
+* More instructions coming soon!
 
 ## Contribution guidelines
 
