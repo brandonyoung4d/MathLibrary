@@ -18,6 +18,7 @@ The focus of this project is to help relearn how matrices and vertices work.
     * For now the project uses Doxygen, but we really need to find an alternative as Doxygen output is terrible.
 * Tests: [Google Test](https://github.com/google/googletest)
 * Code Review: [Bitbucket Pull Requests](https://bitbucket.org/brandonyoung4d/blackboxmath/pull-requests/new)
+* Wiki: [Bitbucket Wiki](https://bitbucket.org/brandonyoung4d/blackboxmath/wiki/Home)
 
 ## Who do I talk to?
 
