@@ -15,6 +15,8 @@ The focus of this project is to help relearn how matrices and vertices work.
 ## Contribution guidelines
 
 * Code styling: [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
+* Documentation: [Doxygen](http://www.stack.nl/~dimitri/doxygen/)
+  * For now the project uses Doxygen but we really need to find an alternative as Doxygen output is terrible.
 * Tests: [Google Test](https://github.com/google/googletest)
 * Code Review: [Bitbucket Pull Requests](https://bitbucket.org/brandonyoung4d/blackboxmath/pull-requests/new)
 
