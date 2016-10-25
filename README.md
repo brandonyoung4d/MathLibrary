@@ -5,8 +5,6 @@ The focus of this project is to help relearn how matrices and vertices work.
 ## What is this repository for?
 
 * Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ## How do I get set up?
 
