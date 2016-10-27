@@ -13,11 +13,11 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 endif()
 
 # Sets all of our warning flags one time
-if(NOT CONFIGURED_ONCE)
+# if(NOT CONFIGURED_ONCE)
     set(CMAKE_CXX_FLAGS "${warnings}" CACHE STRING "Flags used by the compiler during all build types." FORCE)
     set(CMAKE_C_FLAGS   "${warnings}" CACHE STRING "Flags used by the compiler during all build types." FORCE)
-endif()
-set(CONFIGURED_ONCE TRUE CACHE INTERNAL "A flag showing that CMake has configured at least once.")
+# endif()
+# set(CONFIGURED_ONCE TRUE CACHE INTERNAL "A flag showing that CMake has configured at least once.")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -28,6 +28,7 @@ add_executable(BlackBoxMath Source/Main.cpp)
 # Creates a library from the specified cpp files
 add_library(BlackBoxMathLibrary Source/BlackBoxMath.cpp)
 
+set_property(TARGET BlackBoxMath PROPERTY CXX_STANDARD 14)
 set_property(TARGET BlackBoxMathLibrary PROPERTY CXX_STANDARD 14)
 
 # Links a library to a specified executable

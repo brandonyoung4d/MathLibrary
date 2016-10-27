@@ -1,48 +1,53 @@
-//
-//  Vector.inl
-//  BlackBoxMath
-//
-//  Created by Brandon Young on 10/24/16.
-//  Copyright © 2016 BlackBoxCommittee. All rights reserved.
-//
+///
+/// \file Vector.inl
+/// \authors Brandon Young
+/// \date 10/24/16
+/// \brief Contains all templated functions.
+/// \details
+///
+/// \copyright Copyright © 2016 BlackBoxCommittee. All rights reserved.
+///
+
+namespace blackboxmath
+{
 
 template <class T, int8_t N>
-bbm::Vector<T, N>::Vector()
+Vector<T, N>::Vector()
 {
 }
 
 template <class T, int8_t N>
-bbm::Vector<T, N>::Vector(T value)
+Vector<T, N>::Vector(T value)
 {
     components.fill(value);
 }
 
 template <class T>
-bbm::Vector<T, 2>::Vector()
+Vector<T, 2>::Vector()
 {
 }
 
 template <class T>
-bbm::Vector<T, 2>::Vector(T value) :
+Vector<T, 2>::Vector(T value) :
     x(value),
     y(value)
 {
 }
 
 template <class T>
-bbm::Vector<T, 2>::Vector(T newX, T newY) :
+Vector<T, 2>::Vector(T newX, T newY) :
     x(newX),
     y(newY)
 {
 }
 
 template <class T>
-bbm::Vector<T, 3>::Vector()
+Vector<T, 3>::Vector()
 {
 }
 
 template <class T>
-bbm::Vector<T, 3>::Vector(T value) :
+Vector<T, 3>::Vector(T value) :
     x(value),
     y(value),
     z(value)
@@ -50,7 +55,7 @@ bbm::Vector<T, 3>::Vector(T value) :
 }
 
 template <class T>
-bbm::Vector<T, 3>::Vector(T newX, T newY, T newZ) :
+Vector<T, 3>::Vector(T newX, T newY, T newZ) :
     x(newX),
     y(newY),
     z(newZ)
@@ -58,7 +63,7 @@ bbm::Vector<T, 3>::Vector(T newX, T newY, T newZ) :
 }
 
 template <class T>
-bbm::Vector<T, 3>::Vector(const Vector<T, 2>& newXY, T newZ) :
+Vector<T, 3>::Vector(const Vector<T, 2>& newXY, T newZ) :
     x(newXY.x),
     y(newXY.y),
     z(newZ)
@@ -66,12 +71,12 @@ bbm::Vector<T, 3>::Vector(const Vector<T, 2>& newXY, T newZ) :
 }
 
 template <class T>
-bbm::Vector<T, 4>::Vector()
+Vector<T, 4>::Vector()
 {
 }
 
 template <class T>
-bbm::Vector<T, 4>::Vector(T value) :
+Vector<T, 4>::Vector(T value) :
     x(value),
     y(value),
     z(value),
@@ -80,10 +85,12 @@ bbm::Vector<T, 4>::Vector(T value) :
 }
 
 template <class T>
-bbm::Vector<T, 4>::Vector(T newX, T newY, T newZ, T newW) :
+Vector<T, 4>::Vector(T newX, T newY, T newZ, T newW) :
     x(newX),
     y(newY),
     z(newZ),
     w(newW)
 {
 }
+
+} // namespace blackboxmath
