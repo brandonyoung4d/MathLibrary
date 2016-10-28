@@ -86,6 +86,29 @@ public: // Variables
     };
 };
 
+// Default using abbreviations
+using Vector2 = Vector<float, 2>;
+using Vector3 = Vector<float, 3>;
+using Vector4 = Vector<float, 4>;
+
+// Templated using abbreviations
+template <class T>
+using Vector2t = Vector<T, 2>;
+template <class T>
+using Vector3t = Vector<T, 3>;
+template <class T>
+using Vector4t = Vector<T, 4>;
+
+// Float using abbreviations
+using Vector2f = Vector<float, 2>;
+using Vector3f = Vector<float, 3>;
+using Vector4f = Vector<float, 4>;
+
+// Double using abbreviations
+using Vector2d = Vector<double, 2>;
+using Vector3d = Vector<double, 3>;
+using Vector4d = Vector<double, 4>;
+
 } // namespace blackboxmath
 
 // Inline header includes

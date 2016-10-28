@@ -61,6 +61,34 @@ Matrix3x3t<T>::Matrix()
 }
 
 template <class T>
+Matrix3x3t<T>::Matrix(const T& value) :
+    m00(value),
+    m01(value),
+    m02(value),
+    m10(value),
+    m11(value),
+    m12(value),
+    m20(value),
+    m21(value),
+    m22(value)
+{
+}
+
+template <class T>
+Matrix3x3t<T>::Matrix(const T& m00, const T& m01, const T& m02, const T& m10, const T& m11, const T& m12, const T& m20, const T& m21, const T& m22) :
+    m00(n00),
+    m01(n01),
+    m02(n02),
+    m10(n10),
+    m11(n11),
+    m12(n12),
+    m20(n20),
+    m21(n21),
+    m22(n22)
+{
+}
+
+template <class T>
 Matrix4x4t<T>::Matrix()
 {
 }
