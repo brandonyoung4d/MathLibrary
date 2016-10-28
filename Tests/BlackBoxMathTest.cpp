@@ -23,9 +23,11 @@ protected:
 
 TEST_F(VectorTest, TestConstructors)
 {
-    bbm::Vector<float, 2> vec2;
-    bbm::Vector<float, 3> vec3;
-    bbm::Vector<float, 4> vec4;
+    bbm::Vec2 vec2;
+    bbm::Vec3 vec3;
+    bbm::Vec4 vec4;
+    bbm::Mat3 mat3;
+    bbm::Mat4 mat4;
 
     // ASSERT_THAT(list.size(),     testing::Eq(taskCount));
     // EXPECT_THAT(list.getTask(0), testing::Eq(tasks[0]));

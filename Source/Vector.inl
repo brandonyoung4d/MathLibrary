@@ -22,6 +22,13 @@ Vector<T, N>::Vector(T value)
     components.fill(value);
 }
 
+template <class T, int8_t N>
+const Vector<T, N>& Vector<T, N>::Zero()
+{
+    static const Vector<T, N> zeroVector(0);
+    return zeroVector;
+}
+
 template <class T>
 Vector<T, 2>::Vector()
 {

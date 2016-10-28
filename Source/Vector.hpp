@@ -25,6 +25,9 @@ public: // Functions
     Vector();
     explicit Vector(T value);
 
+    // Static
+    static const Vector& Zero();
+
 public: // Variables
     std::array<T, N> components;
 };
