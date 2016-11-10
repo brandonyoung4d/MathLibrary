@@ -11,18 +11,18 @@
 namespace blackboxmath
 {
 
-template <class T, int8_t N>
+template <class T, uint8_t N>
 Vector<T, N>::Vector()
 {
 }
 
-template <class T, int8_t N>
+template <class T, uint8_t N>
 Vector<T, N>::Vector(T value)
 {
     components.fill(value);
 }
 
-template <class T, int8_t N>
+template <class T, uint8_t N>
 const Vector<T, N>& Vector<T, N>::Zero()
 {
     static const Vector<T, N> zeroVector(0);
@@ -46,6 +46,13 @@ Vector<T, 2>::Vector(T newX, T newY) :
     x(newX),
     y(newY)
 {
+}
+
+template <class T>
+const Vector<T, 2>& Vector<T, 2>::Zero()
+{
+    static const Vector<T, 2> zeroVector(0);
+    return zeroVector;
 }
 
 template <class T>
@@ -78,6 +85,13 @@ Vector<T, 3>::Vector(const Vector<T, 2>& newXY, T newZ) :
 }
 
 template <class T>
+const Vector<T, 3>& Vector<T, 3>::Zero()
+{
+    static const Vector<T, 3> zeroVector(0);
+    return zeroVector;
+}
+
+template <class T>
 Vector<T, 4>::Vector()
 {
 }
@@ -98,6 +112,22 @@ Vector<T, 4>::Vector(T newX, T newY, T newZ, T newW) :
     z(newZ),
     w(newW)
 {
+}
+
+template <class T>
+Vector<T, 4>::Vector(const Vector<T, 3>& newXYZ, T newW) :
+    x(newXYZ.x),
+    y(newXYZ.y),
+    z(newXYZ.z),
+    w(newW)
+{
+}
+
+template <class T>
+const Vector<T, 4>& Vector<T, 4>::Zero()
+{
+    static const Vector<T, 4> zeroVector(0);
+    return zeroVector;
 }
 
 } // namespace blackboxmath

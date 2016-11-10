@@ -18,7 +18,7 @@ namespace blackboxmath
 {
 
 /// \brief Base templated vector class. Can hold any number of components. For speed and data locality the class is templated so at compile time the exact size can be determined. Template specializations are used to help with common vector class cases such as vectors with 2, 3, and 4 components.
-template <class T, int8_t N>
+template <class T, uint8_t N>
 struct Vector
 {
 public: // Functions
@@ -32,6 +32,7 @@ public: // Variables
     std::array<T, N> components;
 };
 
+/// \brief Specialization for 2 component vectors.
 template <class T>
 struct Vector<T, 2>
 {
@@ -40,11 +41,15 @@ public: // Functions
     explicit Vector(T value);
     explicit Vector(T newX, T newY);
 
+    // Static
+    static const Vector& Zero();
+
 public: // Variables
     union
     {
         std::array<T, 2> components;
         struct { T x, y; };
+        struct { T r, g; };
     };
 };
 
@@ -56,6 +61,9 @@ public: // Functions
     explicit Vector(T value);
     explicit Vector(T newX, T newY, T newZ);
     explicit Vector(const Vector<T, 2>& newXY, T newZ);
+
+    // Static
+    static const Vector& Zero();
 
 public: // Variables
     union
@@ -73,6 +81,10 @@ public: // Functions
     Vector();
     explicit Vector(T value);
     explicit Vector(T newX, T newY, T newZ, T newW);
+    explicit Vector(const Vector<T, 3>& newXYZ, T newW);
+
+    // Static
+    static const Vector& Zero();
 
 public: // Variables
     union
