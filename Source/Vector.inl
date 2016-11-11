@@ -11,102 +11,86 @@
 namespace blackboxmath
 {
 
-template <class T, uint8_t N>
-Vector<T, N>::Vector()
+Vector2f::Vector2f()
 {
 }
 
-template <class T, uint8_t N>
-Vector<T, N>::Vector(T value)
-{
-    components.fill(value);
-}
-
-template <class T, uint8_t N>
-const Vector<T, N>& Vector<T, N>::Zero()
-{
-    static const Vector<T, N> zeroVector(0);
-    return zeroVector;
-}
-
-template <class T>
-Vector<T, 2>::Vector()
+Vector2f::Vector2f(float newXY) :
+    x(newXY),
+    y(newXY)
 {
 }
 
-template <class T>
-Vector<T, 2>::Vector(T value) :
-    x(value),
-    y(value)
-{
-}
-
-template <class T>
-Vector<T, 2>::Vector(T newX, T newY) :
+Vector2f::Vector2f(float newX, float newY) :
     x(newX),
     y(newY)
 {
 }
 
-template <class T>
-const Vector<T, 2>& Vector<T, 2>::Zero()
-{
-    static const Vector<T, 2> zeroVector(0);
-    return zeroVector;
-}
-
-template <class T>
-Vector<T, 3>::Vector()
+Vector2f::Vector2f(const float* newXY) :
+    x(newXY[0]),
+    y(newXY[1])
 {
 }
 
-template <class T>
-Vector<T, 3>::Vector(T value) :
-    x(value),
-    y(value),
-    z(value)
+Vector2f::Vector2f(const Vector2f& newXY) :
+    x(newXY.x),
+    y(newXY.y)
 {
 }
 
-template <class T>
-Vector<T, 3>::Vector(T newX, T newY, T newZ) :
+Vector3f::Vector3f()
+{
+}
+
+Vector3f::Vector3f(float newXYZ) :
+    x(newXYZ),
+    y(newXYZ),
+    z(newXYZ)
+{
+}
+
+Vector3f::Vector3f(float newX, float newY, float newZ) :
     x(newX),
     y(newY),
     z(newZ)
 {
 }
 
-template <class T>
-Vector<T, 3>::Vector(const Vector<T, 2>& newXY, T newZ) :
+Vector3f::Vector3f(const float* newXYZ) :
+    x(newXYZ[0]),
+    y(newXYZ[1]),
+    z(newXYZ[2])
+{
+}
+
+Vector3f::Vector3f(const Vector3f& newXYZ) :
+    x(newXYZ.x),
+    y(newXYZ.y),
+    z(newXYZ.z)
+{
+}
+
+Vector3f::Vector3f(const Vector2f& newXY, float newZ) :
     x(newXY.x),
     y(newXY.y),
     z(newZ)
 {
 }
 
-template <class T>
-const Vector<T, 3>& Vector<T, 3>::Zero()
-{
-    static const Vector<T, 3> zeroVector(0);
-    return zeroVector;
-}
-
-template <class T>
-Vector<T, 4>::Vector()
+Vector4f::Vector4f()
 {
 }
 
-template <class T>
-Vector<T, 4>::Vector(T value) :
-    x(value),
-    y(value),
-    z(value),
-    w(value)
+Vector4f::Vector4f(float newXYZW) :
+    x(newXYZW),
+    y(newXYZW),
+    z(newXYZW),
+    w(newXYZW)
 {
 }
 
-template <class T>
-Vector<T, 4>::Vector(T newX, T newY, T newZ, T newW) :
+Vector4f::Vector4f(float newX, float newY, float newZ, float newW) :
     x(newX),
     y(newY),
     z(newZ),
@@ -114,20 +98,28 @@ Vector<T, 4>::Vector(T newX, T newY, T newZ, T newW) :
 {
 }
 
-template <class T>
-Vector<T, 4>::Vector(const Vector<T, 3>& newXYZ, T newW) :
+Vector4f::Vector4f(const float* newXYZW) :
+    x(newXYZW[0]),
+    y(newXYZW[1]),
+    z(newXYZW[2]),
+    w(newXYZW[3])
+{
+}
+
+Vector4f::Vector4f(const Vector4f& newXYZW) :
+    x(newXYZW.x),
+    y(newXYZW.y),
+    z(newXYZW.z),
+    w(newXYZW.w)
+{
+}
+
+Vector4f::Vector4f(const Vector3f& newXYZ, float newW) :
     x(newXYZ.x),
     y(newXYZ.y),
     z(newXYZ.z),
     w(newW)
 {
-}
-
-template <class T>
-const Vector<T, 4>& Vector<T, 4>::Zero()
-{
-    static const Vector<T, 4> zeroVector(0);
-    return zeroVector;
 }
 
 } // namespace blackboxmath

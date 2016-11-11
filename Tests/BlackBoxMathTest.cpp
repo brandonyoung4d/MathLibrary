@@ -78,18 +78,18 @@ TEST_F(VectorTest, TestConstructors)
     }
 }
 
-TEST_F(VectorTest, TestZero)
-{
-    ASSERT_FLOAT_EQ(bbm::Vec2::Zero().x, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec2::Zero().y, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec3::Zero().x, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec3::Zero().y, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec3::Zero().z, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec4::Zero().x, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec4::Zero().y, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec4::Zero().z, 0.0f);
-    ASSERT_FLOAT_EQ(bbm::Vec4::Zero().w, 0.0f);
-}
+// TEST_F(VectorTest, TestZero)
+// {
+//     ASSERT_FLOAT_EQ(bbm::Vec2::Zero().x, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec2::Zero().y, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec3::Zero().x, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec3::Zero().y, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec3::Zero().z, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec4::Zero().x, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec4::Zero().y, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec4::Zero().z, 0.0f);
+//     ASSERT_FLOAT_EQ(bbm::Vec4::Zero().w, 0.0f);
+// }
 
 TEST_F(VectorTest, TestMembers)
 {

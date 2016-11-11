@@ -18,108 +18,72 @@ namespace blackboxmath
 {
 
 /// \brief Base templated vector class. Can hold any number of components. For speed and data locality the class is templated so at compile time the exact size can be determined. Template specializations are used to help with common vector class cases such as vectors with 2, 3, and 4 components.
-template <class T, uint8_t N>
-struct Vector
+
+struct Vector2f
 {
 public: // Functions
-    Vector();
-    explicit Vector(T value);
-
-    // Static
-    static const Vector& Zero();
-
-public: // Variables
-    std::array<T, N> components;
-};
-
-/// \brief Specialization for 2 component vectors.
-template <class T>
-struct Vector<T, 2>
-{
-public: // Functions
-    Vector();
-    explicit Vector(T value);
-    explicit Vector(T newX, T newY);
-
-    // Static
-    static const Vector& Zero();
+    Vector2f();
+    explicit Vector2f(float newXY);
+    explicit Vector2f(float newX, float newY);
+    explicit Vector2f(const float* newXY);
+    explicit Vector2f(const Vector2f& newXY);
 
 public: // Variables
     union
     {
-        std::array<T, 2> components;
-        struct { T x, y; };
-        struct { T r, g; };
+        std::array<float, 2> components;
+        struct { float x, y; };
+        struct { float r, g; };
+        struct { float s, t; };
     };
 };
 
-template <class T>
-struct Vector<T, 3>
+struct Vector3f
 {
 public: // Functions
-    Vector();
-    explicit Vector(T value);
-    explicit Vector(T newX, T newY, T newZ);
-    explicit Vector(const Vector<T, 2>& newXY, T newZ);
-
-    // Static
-    static const Vector& Zero();
+    Vector3f();
+    explicit Vector3f(float newXYZ);
+    explicit Vector3f(float newX, float newY, float newZ);
+    explicit Vector3f(const float* newXYZ);
+    explicit Vector3f(const Vector3f& newXYZ);
+    explicit Vector3f(const Vector2f& newXY, float newZ);
 
 public: // Variables
     union
     {
-        std::array<T, 3> components;
-        struct { T x, y, z; };
-        struct { T r, g, b; };
-    };
-};
-
-template <class T>
-struct Vector<T, 4>
-{
-public: // Functions
-    Vector();
-    explicit Vector(T value);
-    explicit Vector(T newX, T newY, T newZ, T newW);
-    explicit Vector(const Vector<T, 3>& newXYZ, T newW);
-
-    // Static
-    static const Vector& Zero();
-
-public: // Variables
-    union
-    {
-        std::array<T, 4> components;
-        struct { T x, y, z, w; };
-        struct { T r, g, b, a; };
+        std::array<float, 3> components;
+        struct { float x, y, z; };
+        struct { float r, g, b; };
         // Swizzling
-        Vector<T, 3> xyz;
-        Vector<T, 3> rgb;
+        Vector2f xy;
     };
 };
 
-// Default using abbreviations
-using Vector2 = Vector<float, 2>;
-using Vector3 = Vector<float, 3>;
-using Vector4 = Vector<float, 4>;
+struct Vector4f
+{
+public: // Functions
+    Vector4f();
+    explicit Vector4f(float newXYZW);
+    explicit Vector4f(float newX, float newY, float newZ, float newW);
+    explicit Vector4f(const float* newXYZW);
+    explicit Vector4f(const Vector4f& newXYZW);
+    explicit Vector4f(const Vector3f& newXYZ, float newW);
 
-// Templated using abbreviations
-template <class T>
-using Vector2t = Vector<T, 2>;
-template <class T>
-using Vector3t = Vector<T, 3>;
-template <class T>
-using Vector4t = Vector<T, 4>;
+public: // Variables
+    union
+    {
+        std::array<float, 4> components;
+        struct { float x, y, z, w; };
+        struct { float r, g, b, a; };
+        // Swizzling
+        Vector3f xyz;
+        Vector3f rgb;
+    };
+};
 
-// Float using abbreviations
-using Vector2f = Vector<float, 2>;
-using Vector3f = Vector<float, 3>;
-using Vector4f = Vector<float, 4>;
-
-// Double using abbreviations
-using Vector2d = Vector<double, 2>;
-using Vector3d = Vector<double, 3>;
-using Vector4d = Vector<double, 4>;
+using Vec2 = Vector2f;
+using Vec3 = Vector3f;
+using Vec4 = Vector4f;
 
 } // namespace blackboxmath
 
