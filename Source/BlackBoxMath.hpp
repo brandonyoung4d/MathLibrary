@@ -18,7 +18,22 @@
 // Usings for the Vector and Matrix class to make it more compact to write code.
 namespace blackboxmath
 {
+    using Mat3 = Matrix3f;
+    using Mat4 = Matrix4f;
+    using Vec2 = Vector2f;
+    using Vec3 = Vector3f;
+    using Vec4 = Vector4f;
 
+    using Size2 = Vector2f;
+    using Point2 = Vector2f;
+
+    using Rect2 = Rectangle2f;
+    using Rect3 = Rectangle3f;
+
+    using Color3 = Vector3f;
+    using Color4 = Vector4f;
+    using Color3b = Vector3b;
+    using Color4b = Vector4b;
 }
 
 namespace bbm = blackboxmath;

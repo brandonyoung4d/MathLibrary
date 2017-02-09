@@ -5,21 +5,17 @@
 /// \brief Holds all templated vector classes.
 /// \details
 ///
-/// \copyright Copyright © 2016 BlackBoxCommittee. All rights reserved.
+/// \copyright Copyright © 2017 BlackBoxCommittee. All rights reserved.
 ///
 
-#ifndef BLACKBOXMATH_VECTOR_H_
-#define BLACKBOXMATH_VECTOR_H_
-
-// C++ includes
-#include <array>
+#pragma once
 
 namespace blackboxmath
 {
 
 /// \brief Base templated vector class. Can hold any number of components. For speed and data locality the class is templated so at compile time the exact size can be determined. Template specializations are used to help with common vector class cases such as vectors with 2, 3, and 4 components.
 
-struct Vector2f
+class Vector2f
 {
 public: // Functions
     Vector2f();
@@ -28,17 +24,23 @@ public: // Functions
     explicit Vector2f(const float* newXY);
     explicit Vector2f(const Vector2f& newXY);
 
-public: // Variables
+    float& x();
+    const float& x() const;
+    float& y();
+    const float& y() const;
+
+    float* const data();
+    const float* const data() const;
+
+private: // Variables
     union
     {
-        std::array<float, 2> components;
-        struct { float x, y; };
-        struct { float r, g; };
-        struct { float s, t; };
+        struct { float _x, _y; };
+        float _components[2];
     };
 };
 
-struct Vector3f
+class Vector3f
 {
 public: // Functions
     Vector3f();
@@ -48,18 +50,30 @@ public: // Functions
     explicit Vector3f(const Vector3f& newXYZ);
     explicit Vector3f(const Vector2f& newXY, float newZ);
 
+    float& x();
+    const float& x() const;
+    float& y();
+    const float& y() const;
+    float& z();
+    const float& z() const;
+
+    float* const data();
+    const float* const data() const;
+
 public: // Variables
     union
     {
-        std::array<float, 3> components;
-        struct { float x, y, z; };
-        struct { float r, g, b; };
-        // Swizzling
-        Vector2f xy;
+        struct
+        {
+            float _x;
+            float _y;
+            float _z;
+        };
+        float _components[3];
     };
 };
 
-struct Vector4f
+class Vector4f
 {
 public: // Functions
     Vector4f();
@@ -69,25 +83,33 @@ public: // Functions
     explicit Vector4f(const Vector4f& newXYZW);
     explicit Vector4f(const Vector3f& newXYZ, float newW);
 
+    float& x();
+    const float& x() const;
+    float& y();
+    const float& y() const;
+    float& z();
+    const float& z() const;
+    float& w();
+    const float& w() const;
+
+    float* const data();
+    const float* const data() const;
+
 public: // Variables
     union
     {
-        std::array<float, 4> components;
-        struct { float x, y, z, w; };
-        struct { float r, g, b, a; };
-        // Swizzling
-        Vector3f xyz;
-        Vector3f rgb;
+        struct
+        {
+            float _x;
+            float _y;
+            float _z;
+            float _w;
+        };
+        float _components[4];
     };
 };
-
-using Vec2 = Vector2f;
-using Vec3 = Vector3f;
-using Vec4 = Vector4f;
 
 } // namespace blackboxmath
 
 // Inline header includes
 #include  "Vector.inl"
-
-#endif // BLACKBOXMATH_VECTOR_H_

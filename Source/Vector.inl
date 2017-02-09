@@ -15,9 +15,9 @@ Vector2f::Vector2f()
 {
 }
 
-Vector2f::Vector2f(float newXY) :
-    x(newXY),
-    y(newXY)
+Vector2f::Vector2f(float newComponents) :
+    x(newComponents),
+    y(newComponents)
 {
 }
 
@@ -27,15 +27,15 @@ Vector2f::Vector2f(float newX, float newY) :
 {
 }
 
-Vector2f::Vector2f(const float* newXY) :
-    x(newXY[0]),
-    y(newXY[1])
+Vector2f::Vector2f(const float* newComponents) :
+    x(newComponents[0]),
+    y(newComponents[1])
 {
 }
 
-Vector2f::Vector2f(const Vector2f& newXY) :
-    x(newXY.x),
-    y(newXY.y)
+Vector2f::Vector2f(const Vector2f& newVector) :
+    x(newVector.x),
+    y(newVector.y)
 {
 }
 
