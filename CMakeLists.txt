@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+set(CMAKE_OSX_DEPLOYMENT_TARGET "" CACHE STRING "Minimum OS X deployment version")
+
 project("BlackBoxMath")
 enable_testing()
 
@@ -12,12 +14,9 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     set(warnings "/W4 /WX /EHsc")
 endif()
 
-# Sets all of our warning flags one time
-# if(NOT CONFIGURED_ONCE)
-    set(CMAKE_CXX_FLAGS "${warnings}" CACHE STRING "Flags used by the compiler during all build types." FORCE)
-    set(CMAKE_C_FLAGS   "${warnings}" CACHE STRING "Flags used by the compiler during all build types." FORCE)
-# endif()
-# set(CONFIGURED_ONCE TRUE CACHE INTERNAL "A flag showing that CMake has configured at least once.")
+# Sets all of our warning flags
+set(CMAKE_CXX_FLAGS "${warnings}" CACHE STRING "Flags used by the compiler during all build types." FORCE)
+set(CMAKE_C_FLAGS   "${warnings}" CACHE STRING "Flags used by the compiler during all build types." FORCE)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
