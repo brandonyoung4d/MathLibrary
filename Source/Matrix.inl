@@ -41,9 +41,15 @@ Matrix3f::Matrix3f(float n00, float n01, float n02, float n10, float n11, float 
 }
 
 Matrix3f::Matrix3f(const Vector3f& newRow0, const Vector3f& newRow1, const Vector3f& newRow2)
-    : _row0(newRow0)
-    , _row1(newRow1)
-    , _row2(newRow2)
+    : _m00(newRow0.x())
+    , _m01(newRow0.y())
+    , _m02(newRow0.z())
+    , _m10(newRow1.x())
+    , _m11(newRow1.y())
+    , _m12(newRow1.z())
+    , _m20(newRow2.x())
+    , _m21(newRow2.y())
+    , _m22(newRow2.z())
 {
 }
 
@@ -118,10 +124,22 @@ Matrix4f::Matrix4f(float n00, float n01, float n02, float n03, float n10, float 
 }
 
 Matrix4f::Matrix4f(const Vector4f& newRow0, const Vector4f& newRow1, const Vector4f& newRow2, const Vector4f& newRow3)
-    : _row0(newRow0)
-    , _row1(newRow1)
-    , _row2(newRow2)
-    , _row3(newRow3)
+    : _m00(newRow0.x())
+    , _m01(newRow0.y())
+    , _m02(newRow0.z())
+    , _m03(newRow0.w())
+    , _m10(newRow1.x())
+    , _m11(newRow1.y())
+    , _m12(newRow1.z())
+    , _m13(newRow1.w())
+    , _m20(newRow2.x())
+    , _m21(newRow2.y())
+    , _m22(newRow2.z())
+    , _m23(newRow2.w())
+    , _m30(newRow3.x())
+    , _m31(newRow3.y())
+    , _m32(newRow3.z())
+    , _m33(newRow3.w())
 {
 }
 
@@ -162,7 +180,6 @@ Matrix4f::Matrix4f(const float* const newComponents)
     , _m31(newComponents[13])
     , _m32(newComponents[14])
     , _m33(newComponents[15])
-
 {
 }
 

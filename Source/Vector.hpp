@@ -26,18 +26,11 @@ public:  // Functions
     float& y();
     float y() const;
 
-    float* const data();
-    const float* const data() const;
+    float* data();
+    const float* data() const;
 
 private:  // Variables
-    union
-    {
-        struct
-        {
-            float _x, _y;
-        };
-        float _components[2];
-    };
+    float _x, _y;
 };
 
 class Vector3f
@@ -57,18 +50,11 @@ public:  // Functions
     float& z();
     float z() const;
 
-    float* const data();
-    const float* const data() const;
+    float* data();
+    const float* data() const;
 
 public:  // Variables
-    union
-    {
-        struct
-        {
-            float _x, _y, _z;
-        };
-        float _components[3];
-    };
+    float _x, _y, _z;
 };
 
 class Vector4f
@@ -90,18 +76,11 @@ public:  // Functions
     float& w();
     float w() const;
 
-    float* const data();
-    const float* const data() const;
+    float* data();
+    const float* data() const;
 
 public:  // Variables
-    union
-    {
-        struct
-        {
-            float _x, _y, _z, _w;
-        };
-        float _components[4];
-    };
+    float _x, _y, _z, _w;
 };
 
 class Vector4b
@@ -123,19 +102,11 @@ public:  // Functions
     uint8_t& w();
     uint8_t w() const;
 
-    uint8_t* const data();
-    const uint8_t* const data() const;
+    uint8_t* data();
+    const uint8_t* data() const;
 
 public:  // Variables
-    union
-    {
-        struct
-        {
-            uint8_t _x, _y, _z, _w;
-        };
-        uint32_t _xyzw;
-        uint8_t _components[4];
-    };
+    uint8_t _x, _y, _z, _w;
 };
 
 }  // Namespace blackboxmath

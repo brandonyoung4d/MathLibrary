@@ -58,14 +58,14 @@ float Vector2f::y() const
     return _y;
 }
 
-float* const Vector2f::data()
+float* Vector2f::data()
 {
-    return _components;
+    return reinterpret_cast<float*>(this);
 }
 
-const float* const Vector2f::data() const
+const float* Vector2f::data() const
 {
-    return _components;
+    return reinterpret_cast<const float*>(this);
 }
 
 Vector3f::Vector3f()
@@ -137,14 +137,14 @@ float Vector3f::z() const
     return _z;
 }
 
-float* const Vector3f::data()
+float* Vector3f::data()
 {
-    return _components;
+    return reinterpret_cast<float*>(this);
 }
 
-const float* const Vector3f::data() const
+const float* Vector3f::data() const
 {
-    return _components;
+    return reinterpret_cast<const float*>(this);
 }
 
 Vector4f::Vector4f()
@@ -231,14 +231,14 @@ float Vector4f::w() const
     return _w;
 }
 
-float* const Vector4f::data()
+float* Vector4f::data()
 {
-    return _components;
+    return reinterpret_cast<float*>(this);
 }
 
-const float* const Vector4f::data() const
+const float* Vector4f::data() const
 {
-    return _components;
+    return reinterpret_cast<const float*>(this);
 }
 
 Vector4b::Vector4b()
@@ -262,7 +262,10 @@ Vector4b::Vector4b(uint8_t newX, uint8_t newY, uint8_t newZ, uint8_t newW)
 }
 
 Vector4b::Vector4b(uint32_t newXYZW)
-    : _xyzw(newXYZW)
+    : _x(static_cast<uint8_t>(newXYZW))
+    , _y(static_cast<uint8_t>(newXYZW << 8))
+    , _z(static_cast<uint8_t>(newXYZW << 16))
+    , _w(static_cast<uint8_t>(newXYZW << 24))
 {
 }
 
@@ -322,14 +325,14 @@ uint8_t Vector4b::w() const
     return _w;
 }
 
-uint8_t* const Vector4b::data()
+uint8_t* Vector4b::data()
 {
-    return _components;
+    return reinterpret_cast<uint8_t*>(this);
 }
 
-const uint8_t* const Vector4b::data() const
+const uint8_t* Vector4b::data() const
 {
-    return _components;
+    return reinterpret_cast<const uint8_t*>(this);
 }
 
 }  // namespace blackboxmath

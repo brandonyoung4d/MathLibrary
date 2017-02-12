@@ -29,21 +29,7 @@ public:  // Functions
     explicit Matrix3f(const float* const newComponents);
 
 private:  // Variables
-    union
-    {
-        /// Named components, column index first, then row index.
-        struct
-        {
-            float _m00, _m01, _m02, _m10, _m11, _m12, _m20, _m21, _m22;
-        };
-        /// Named rows.
-        struct
-        {
-            Vector3f _row0, _row1, _row2;
-        };
-        /// One dimensional array of all components.
-        std::array<float, 3 * 3> _components;
-    };
+    float _m00, _m01, _m02, _m10, _m11, _m12, _m20, _m21, _m22;
 };
 
 class Matrix4f
@@ -57,21 +43,7 @@ public:  // Functions
     explicit Matrix4f(const float* const newComponents);
 
 public:  // Variables
-    union
-    {
-        /// Named components, column index first, then row index.
-        struct
-        {
-            float _m00, _m01, _m02, _m03, _m10, _m11, _m12, _m13, _m20, _m21, _m22, _m23, _m30, _m31, _m32, _m33;
-        };
-        /// Named rows.
-        struct
-        {
-            Vector4f _row0, _row1, _row2, _row3;
-        };
-        /// One dimensional array of all components.
-        std::array<float, 4 * 4> _components;
-    };
+    float _m00, _m01, _m02, _m03, _m10, _m11, _m12, _m13, _m20, _m21, _m22, _m23, _m30, _m31, _m32, _m33;
 };
 
 }  // Namespace blackboxmath
