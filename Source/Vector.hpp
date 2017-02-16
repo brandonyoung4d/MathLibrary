@@ -16,10 +16,10 @@ class Vector2f
 {
 public: // Functions
     Vector2f();
+    Vector2f(const Vector2f& newXY);
     explicit Vector2f(float newXY);
     explicit Vector2f(float newX, float newY);
     explicit Vector2f(const float* const newXY);
-    explicit Vector2f(const Vector2f& newXY);
 
     // Getters
     float& x();
@@ -40,10 +40,10 @@ class Vector3f
 {
 public: // Functions
     Vector3f();
+    Vector3f(const Vector3f& newXYZ);
     explicit Vector3f(float newXYZ);
     explicit Vector3f(float newX, float newY, float newZ);
     explicit Vector3f(const float* const newXYZ);
-    explicit Vector3f(const Vector3f& newXYZ);
     explicit Vector3f(const Vector2f& newXY, float newZ);
 
     // Getters
