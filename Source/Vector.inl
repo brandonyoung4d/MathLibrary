@@ -68,6 +68,11 @@ const float* Vector2f::data() const
     return reinterpret_cast<const float*>(this);
 }
 
+Vector2f Vector2f::zero()
+{
+    return Vector2f(0.0f, 0.0f);
+}
+
 Vector3f::Vector3f()
 {
 }
@@ -145,6 +150,11 @@ float* Vector3f::data()
 const float* Vector3f::data() const
 {
     return reinterpret_cast<const float*>(this);
+}
+
+Vector3f Vector3f::zero()
+{
+    return Vector3f(0.0f, 0.0f, 0.0f);
 }
 
 Vector4f::Vector4f()
@@ -335,4 +345,4 @@ const uint8_t* Vector4b::data() const
     return reinterpret_cast<const uint8_t*>(this);
 }
 
-}  // namespace blackboxmath
+} // namespace blackboxmath

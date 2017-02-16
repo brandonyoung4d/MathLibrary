@@ -14,28 +14,31 @@ namespace blackboxmath
 {
 class Vector2f
 {
-public:  // Functions
+public: // Functions
     Vector2f();
     explicit Vector2f(float newXY);
     explicit Vector2f(float newX, float newY);
     explicit Vector2f(const float* const newXY);
     explicit Vector2f(const Vector2f& newXY);
 
+    // Getters
     float& x();
     float x() const;
     float& y();
     float y() const;
-
     float* data();
     const float* data() const;
 
-private:  // Variables
+    // Static getters
+    static Vector2f zero();
+
+private: // Variables
     float _x, _y;
 };
 
 class Vector3f
 {
-public:  // Functions
+public: // Functions
     Vector3f();
     explicit Vector3f(float newXYZ);
     explicit Vector3f(float newX, float newY, float newZ);
@@ -43,23 +46,26 @@ public:  // Functions
     explicit Vector3f(const Vector3f& newXYZ);
     explicit Vector3f(const Vector2f& newXY, float newZ);
 
+    // Getters
     float& x();
     float x() const;
     float& y();
     float y() const;
     float& z();
     float z() const;
-
     float* data();
     const float* data() const;
 
-public:  // Variables
+    // Static getters
+    static Vector3f zero();
+
+public: // Variables
     float _x, _y, _z;
 };
 
 class Vector4f
 {
-public:  // Functions
+public: // Functions
     Vector4f();
     explicit Vector4f(float newXYZW);
     explicit Vector4f(float newX, float newY, float newZ, float newW);
@@ -79,13 +85,13 @@ public:  // Functions
     float* data();
     const float* data() const;
 
-public:  // Variables
+public: // Variables
     float _x, _y, _z, _w;
 };
 
 class Vector4b
 {
-public:  // Functions
+public: // Functions
     Vector4b();
     explicit Vector4b(uint8_t newXYZW);
     explicit Vector4b(uint8_t newX, uint8_t newY, uint8_t newZ, uint8_t newW);
@@ -105,11 +111,11 @@ public:  // Functions
     uint8_t* data();
     const uint8_t* data() const;
 
-public:  // Variables
+public: // Variables
     uint8_t _x, _y, _z, _w;
 };
 
-}  // Namespace blackboxmath
+} // Namespace blackboxmath
 
 // Inline header includes
 #include "Vector.inl"
