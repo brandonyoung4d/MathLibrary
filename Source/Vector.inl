@@ -251,6 +251,11 @@ const float* Vector4f::data() const
     return reinterpret_cast<const float*>(this);
 }
 
+Vector4f Vector4f::zero()
+{
+    return Vector4f(0.0f, 0.0f, 0.0f, 0.0f);
+}
+
 Vector4b::Vector4b()
 {
 }
@@ -343,6 +348,11 @@ uint8_t* Vector4b::data()
 const uint8_t* Vector4b::data() const
 {
     return reinterpret_cast<const uint8_t*>(this);
+}
+
+Vector4b Vector4b::zero()
+{
+    return Vector4b(0, 0, 0, 0);
 }
 
 } // namespace blackboxmath

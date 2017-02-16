@@ -81,9 +81,11 @@ public: // Functions
     float z() const;
     float& w();
     float w() const;
-
     float* data();
     const float* data() const;
+
+    // Static getters
+    static Vector4f zero();
 
 public: // Variables
     float _x, _y, _z, _w;
@@ -107,9 +109,11 @@ public: // Functions
     uint8_t z() const;
     uint8_t& w();
     uint8_t w() const;
-
     uint8_t* data();
     const uint8_t* data() const;
+
+    // Static getters
+    static Vector4b zero();
 
 public: // Variables
     uint8_t _x, _y, _z, _w;
