@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 set(CMAKE_OSX_DEPLOYMENT_TARGET "" CACHE STRING "Minimum OS X deployment version")
+set(CMAKE_OSX_SYSROOT "" CACHE STRING "Root")
 
 project("BlackBoxMath")
 enable_testing()

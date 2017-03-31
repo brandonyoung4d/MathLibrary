@@ -11,17 +11,17 @@
 namespace blackboxmath
 {
 
-// Rectangle::Rectangle()
-// {
-//     // Nothing
-// }
+Rectangle::Rectangle()
+{
+    // Nothing
+}
 
-// Rectangle::Rectangle(const Vector2f& origin, const Vector2f& size)
-// : _origin(origin)
-// , _size(size)
-// {
+Rectangle::Rectangle(const Vector2f& origin, const Vector2f& size)
+: _origin(origin)
+, _size(size)
+{
 
-// }
+}
 
 // Rectangle::Rectangle(const Vector2f& origin, const Vector2f& size, const Vector2f& anchorVector)
 // : _origin(origin)

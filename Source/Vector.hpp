@@ -67,10 +67,10 @@ class Vector4f
 {
 public: // Functions
     Vector4f();
+    Vector4f(const Vector4f& newXYZW);
     explicit Vector4f(float newXYZW);
     explicit Vector4f(float newX, float newY, float newZ, float newW);
     explicit Vector4f(const float* const newXYZW);
-    explicit Vector4f(const Vector4f& newXYZW);
     explicit Vector4f(const Vector3f& newXYZ, float newW);
 
     float& x();
@@ -95,11 +95,11 @@ class Vector4b
 {
 public: // Functions
     Vector4b();
+    Vector4b(const Vector4b& newXYZW);
     explicit Vector4b(uint8_t newXYZW);
     explicit Vector4b(uint8_t newX, uint8_t newY, uint8_t newZ, uint8_t newW);
     explicit Vector4b(uint32_t newXYZW);
     explicit Vector4b(const uint8_t* const newXYZW);
-    explicit Vector4b(const Vector4b& newXYZW);
 
     uint8_t& x();
     uint8_t x() const;

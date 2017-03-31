@@ -18,40 +18,30 @@
 
 namespace blackboxmath
 {
+class Rectanglef
+{
+public: // Functions
+    // Constructors
+    Rectanglef();
+    Rectanglef(const Rectanglef& rectangle);
+    static Rectanglef OriginAndSize(const Vector2f& origin, const Vector2f& size);
+    static Rectanglef CenterAndSize(const Vector2f& center, const Vector2f& size);
+    static Rectanglef MinAndMax(const Vector2f& min, const Vector2f& max);
 
-// class Rectangle2f
-// {
-// public: // Functions
-//     // Constructors
-//     Rectangle2f();
-//     Rectangle2f(const Vector2f& min, const Vector2f& max);
-//     Rectangle2f(const Vector2f& origin, const Vector2f& size, const Vector2f& anchorVector);
-//     Rectangle2f(const Rectangle2f& rectangle);
+    // Getters
+    Vecto2f& origin();
+    const Vector2f& origin() const;
+    Vector2f& size();
+    const Vector2f& size() const;
+    Vector2f min();
+    Vector2f center();
+    Vector2f max();
 
-//     // Getters
-//     Vecto2f& origin();
-//     const Vector2f& origin() const;
-//     Vector2f& size();
-//     const Vector2f& size() const;
-//     Vector2f& anchorVector();
-//     const Vector2f& anchorVector() const;
-//     Vector2f min();
-//     Vector2f center();
-//     Vector2f max();
-
-//     // Anchor functions
-//     static Vector2f bottomLeftAnchor();
-//     static Vector2f topLeftAnchor();
-//     static Vector2f bottomAnchor();
-
-// private: // Variables
-//     Vector2f _origin = Vector2f::zero();
-//     Vector2f _size = Vector2f::zero();
-//     Vector2f _anchorVector = Vector2f::zero();
-//     bool _hasAnchorVector = false;
-// };
-
+private: // Variables
+    Vector2f _origin = Vector2f::zero();
+    Vector2f _size = Vector2f::zero();
+};
 }
 
 // Inline header includes
-#include  "Rectangle.inl"
+#include "Rectangle.inl"
