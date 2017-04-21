@@ -11,9 +11,9 @@
 // C++ includes
 #include <cassert>
 #include <cstdint>
-#include <sstream>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 namespace blackboxmath
 {
@@ -45,27 +45,27 @@ namespace blackboxmath
     }
 }
 
-#define bbmLog(t, g, m)                                                                                   \
-    do                                                                                                    \
-    {                                                                                                     \
-        if(blackboxmath::Log::IsPrinting())                                                                        \
-        {                                                                                                 \
-            std::stringstream ss;                                                                         \
-            ss << m;                                                                                      \
-            blackboxmath::Log::Print(blackboxmath::Log::Type::t, blackboxmath::Log::Group::g, ss.str(), __FILE__, __LINE__);         \
-        }                                                                                                 \
-        if(blackboxmath::Log::IsBreaking())                                                                        \
-        {                                                                                                 \
+#define bbmLog(t, g, m)                                                                                                                       \
+    do                                                                                                                                        \
+    {                                                                                                                                         \
+        if(blackboxmath::Log::IsPrinting())                                                                                                   \
+        {                                                                                                                                     \
+            std::stringstream ss;                                                                                                             \
+            ss << m;                                                                                                                          \
+            blackboxmath::Log::Print(blackboxmath::Log::Type::t, blackboxmath::Log::Group::g, ss.str(), __FILE__, __LINE__);                  \
+        }                                                                                                                                     \
+        if(blackboxmath::Log::IsBreaking())                                                                                                   \
+        {                                                                                                                                     \
             if(blackboxmath::Log::Type::t == blackboxmath::Log::Type::Error || blackboxmath::Log::Type::t == blackboxmath::Log::Type::Assert) \
-            {                                                                                             \
-                __asm("int $3");                                                                          \
-            }                                                                                             \
-        }                                                                                                 \
-        if(blackboxmath::Log::IsAsserting())                                                                       \
-        {                                                                                                 \
-            if(blackboxmath::Log::Type::t == blackboxmath::Log::Type::Assert)                                               \
-            {                                                                                             \
-                assert(0);                                                                                \
-            }                                                                                             \
-        }                                                                                                 \
+            {                                                                                                                                 \
+                __asm("int $3");                                                                                                              \
+            }                                                                                                                                 \
+        }                                                                                                                                     \
+        if(blackboxmath::Log::IsAsserting())                                                                                                  \
+        {                                                                                                                                     \
+            if(blackboxmath::Log::Type::t == blackboxmath::Log::Type::Assert)                                                                 \
+            {                                                                                                                                 \
+                assert(0);                                                                                                                    \
+            }                                                                                                                                 \
+        }                                                                                                                                     \
     } while(0);

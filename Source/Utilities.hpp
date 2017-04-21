@@ -18,12 +18,12 @@
 // Project includes
 #include "Logging.hpp"
 
-#define CLASS_NAME_TEMPLATE(ct)                    \
-    template<> static constexpr char ClassName<ct>[] = #ct \
+#define CLASS_NAME_TEMPLATE(ct) \
+    template<>                  \
+    static constexpr char ClassName<ct>[] = #ct
 
 namespace blackboxmath
 {
-
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
     template<class T>
