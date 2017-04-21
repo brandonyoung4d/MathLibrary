@@ -8,8 +8,11 @@
 /// \copyright Copyright © 2016 BlackBoxCommittee. All rights reserved.
 ///
 
+#include "Utilities.hpp"
+
 namespace blackboxmath
 {
+
 Vector2f::Vector2f()
 {
 }
@@ -352,7 +355,7 @@ const uint8_t* Vector4b::data() const
 
 Vector4b Vector4b::zero()
 {
-    return Vector4b(0, 0, 0, 0);
+    return Vector4b(0.0f, 0.0f, 0.0f, 0.0f);
 }
 
 } // namespace blackboxmath

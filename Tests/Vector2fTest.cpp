@@ -12,7 +12,7 @@ void Vector2fTest::TestVector(const bbm::Vector2f& lhs, const bbm::Vector2f& rhs
     ASSERT_FLOAT_EQ(lhs.y(), rhs.y());
 }
 
-virtual void Vector2fTest::SetUp()
+void Vector2fTest::SetUp()
 {
     const float lowestFloat = std::numeric_limits<float>::lowest();
     const float maxFloat = std::numeric_limits<float>::max();

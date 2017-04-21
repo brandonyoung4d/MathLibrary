@@ -23,10 +23,12 @@ public: // Functions
 
     // Getters
     float& x();
-    float x() const;
     float& y();
-    float y() const;
     float* data();
+
+    // Const getters.
+    float x() const;
+    float y() const;
     const float* data() const;
 
     // Static getters
@@ -48,12 +50,14 @@ public: // Functions
 
     // Getters
     float& x();
-    float x() const;
     float& y();
-    float y() const;
     float& z();
-    float z() const;
     float* data();
+
+    // Const getters.
+    float x() const;
+    float y() const;
+    float z() const;
     const float* data() const;
 
     // Static getters
@@ -73,15 +77,18 @@ public: // Functions
     explicit Vector4f(const float* const newXYZW);
     explicit Vector4f(const Vector3f& newXYZ, float newW);
 
+    // Getters.
     float& x();
-    float x() const;
     float& y();
-    float y() const;
     float& z();
-    float z() const;
     float& w();
-    float w() const;
     float* data();
+
+    // Const getters.
+    float x() const;
+    float y() const;
+    float z() const;
+    float w() const;
     const float* data() const;
 
     // Static getters
@@ -101,15 +108,18 @@ public: // Functions
     explicit Vector4b(uint32_t newXYZW);
     explicit Vector4b(const uint8_t* const newXYZW);
 
+    // Getters.
     uint8_t& x();
-    uint8_t x() const;
     uint8_t& y();
-    uint8_t y() const;
     uint8_t& z();
-    uint8_t z() const;
     uint8_t& w();
-    uint8_t w() const;
     uint8_t* data();
+
+    // Const getters.
+    uint8_t x() const;
+    uint8_t y() const;
+    uint8_t z() const;
+    uint8_t w() const;
     const uint8_t* data() const;
 
     // Static getters

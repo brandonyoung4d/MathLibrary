@@ -21,12 +21,16 @@ set(CMAKE_C_FLAGS   "${warnings}" CACHE STRING "Flags used by the compiler durin
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
+set(SOURCE_FILES
+    Source/BlackBoxMath.cpp
+    Source/Logging.cpp)
+
 # This will run any CMakeLists.txt in specified subdirectory
 add_subdirectory(Tests)
 # Creates an executable using the specified cpp files
 add_executable(BlackBoxMath Source/Main.cpp)
 # Creates a library from the specified cpp files
-add_library(BlackBoxMathLibrary Source/BlackBoxMath.cpp)
+add_library(BlackBoxMathLibrary ${SOURCE_FILES})
 
 set_property(TARGET BlackBoxMath PROPERTY CXX_STANDARD 14)
 set_property(TARGET BlackBoxMathLibrary PROPERTY CXX_STANDARD 14)

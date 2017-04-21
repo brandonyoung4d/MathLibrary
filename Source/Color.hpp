@@ -48,22 +48,27 @@ namespace blackboxmath
 //     const float& a() const;
 // };
 
-// class Color4b : public Vector4b
-// {
-// public: // Functions
-//     Color4b();
-//     explicit Color4b(uint8_t newRGBA);
-//     explicit Color4b(uint8_t newR, uint8_t newG, uint8_t newB, uint8_t newA);
-//     explicit Color4b(const uint8_t* newRGBA);
-//     explicit Color4b(const Color4b& newRGBA);
+class Color4b : public Vector4b
+{
+public: // Functions
+    Color4b();
+    explicit Color4b(uint8_t newRGBA);
+    explicit Color4b(uint8_t newR, uint8_t newG, uint8_t newB, uint8_t newA);
+    explicit Color4b(float newR, float newG, float newB, float newA);
+    explicit Color4b(const uint8_t* newRGBA);
+    explicit Color4b(const Color4b& newRGBA);
 
-//     float& r();
-//     const float& r() const;
-//     float& g();
-//     const float& g() const;
-//     float& b();
-//     const float& b() const;
-//     float& a();
-//     const float& a() const;
-// }
+    // Getters.
+    float& r();
+    float& g();
+    float& b();
+    float& a();
+
+    // Const getters.
+    const float& r() const;
+    const float& g() const;
+    const float& b() const;
+    const float& a() const;
+}
+
 }
