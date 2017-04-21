@@ -78,6 +78,7 @@ std::string blackboxmath::Log::ToString(Group group)
     case blackboxmath::Log::Group::Utilities:
         return "Utilities";
     }
+    return "";
 }
 
 std::string blackboxmath::Log::ToString(Type type)
@@ -91,4 +92,5 @@ std::string blackboxmath::Log::ToString(Type type)
     case blackboxmath::Log::Type::Assert:
         return "Assert";
     }
+    return "";
 }
