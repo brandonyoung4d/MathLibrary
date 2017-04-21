@@ -20,7 +20,7 @@
 
 #define CLASS_NAME_TEMPLATE(ct) \
     template<>                  \
-    static constexpr char ClassName<ct>[] = #ct
+    constexpr char ClassName<ct>[] = #ct
 
 namespace blackboxmath
 {
