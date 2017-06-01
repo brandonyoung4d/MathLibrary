@@ -8,49 +8,46 @@
 /// \copyright Copyright © 2017 BlackBoxCommittee. All rights reserved.
 ///
 
-namespace blackboxmath
+namespace bbm
 {
-    Rectangle::Rectangle()
-    {
-        // Nothing
-    }
-
-    Rectangle::Rectangle(const Vector2f& origin, const Vector2f& size)
-        : _origin(origin)
-        , _size(size)
-    {
-    }
-
-    // Rectangle::Rectangle(const Vector2f& origin, const Vector2f& size, const Vector2f& anchorVector)
-    // : _origin(origin)
-    // , _size(size)
-    // , _anchorVector(anchorVector)
-    // {
-
-    // }
-
-    // Rectangle Rectangle::createWithMinAndMax(const Vector2f& min, const Vector2f& max)
-    // {
-
-    // }
-
-    // Vector2f& Rectangle::origin()
-    // {
-    //     return _origin;
-    // }
-
-    // const Vector2f& Rectangle::origin() const
-    // {
-    //     return _origin
-    // }
-
-    // Vector2f& Rectangle::size()
-    // {
-    //     return _size;
-    // }
-
-    // const Vector2f& Rectangle::size() const
-    // {
-    //     return _size;
-    // }
+Rectangle::Rectangle()
+{
+    // Nothing
 }
+
+Rectangle::Rectangle(const Vector2f& origin, const Vector2f& size)
+    : _origin(origin), _size(size) {}
+
+// Rectangle::Rectangle(const Vector2f& origin, const Vector2f& size, const
+// Vector2f& anchorVector) : _origin(origin) , _size(size) ,
+// _anchorVector(anchorVector)
+// {
+
+// }
+
+// Rectangle Rectangle::createWithMinAndMax(const Vector2f& min, const Vector2f&
+// max)
+// {
+
+// }
+
+// Vector2f& Rectangle::origin()
+// {
+//     return _origin;
+// }
+
+// const Vector2f& Rectangle::origin() const
+// {
+//     return _origin
+// }
+
+// Vector2f& Rectangle::size()
+// {
+//     return _size;
+// }
+
+// const Vector2f& Rectangle::size() const
+// {
+//     return _size;
+// }
+}  // namespace bbm

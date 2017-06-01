@@ -23,7 +23,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 set(SOURCE_FILES
     Source/BlackBoxMath.cpp
-    Source/Logging.cpp)
+    Source/LogSystem.cpp)
 
 # This will run any CMakeLists.txt in specified subdirectory
 add_subdirectory(Tests)

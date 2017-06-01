@@ -13,15 +13,15 @@
 // Project includes
 #include "Vector.hpp"
 
-namespace blackboxmath
+namespace bbm
 {
-    // class NormalizedVector2f : public Vector2f
-    // {
-    // public:  // Functions
-    //     NormalizedVector2f();
-    //     explicit NormalizedVector2f(float newComponents);
-    //     explicit NormalizedVector2f(float newX, newY);
-    //     explicit NormalizedVector2f(const float* newComponents);
-    //     explicit NormalizedVector2f(const Vector2f& newVector);
-    // }
+// class NormalizedVector2f : public Vector2f
+// {
+// public:  // Functions
+//     NormalizedVector2f();
+//     explicit NormalizedVector2f(float newComponents);
+//     explicit NormalizedVector2f(float newX, newY);
+//     explicit NormalizedVector2f(const float* newComponents);
+//     explicit NormalizedVector2f(const Vector2f& newVector);
+// }
 }

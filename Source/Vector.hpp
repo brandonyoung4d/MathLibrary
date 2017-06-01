@@ -10,126 +10,132 @@
 
 #pragma once
 
-namespace blackboxmath
+// Project includes
+#include "Utilities.hpp"
+
+namespace bbm
 {
-    class Vector2f
-    {
-    public: // Functions
-        Vector2f();
-        Vector2f(const Vector2f& newXY);
-        explicit Vector2f(float newXY);
-        explicit Vector2f(float newX, float newY);
-        explicit Vector2f(const float* const newXY);
+class Vector2f
+{
+public:  // Functions
+    Vector2f();
+    Vector2f(const Vector2f& newXY);
+    explicit Vector2f(float newXY);
+    explicit Vector2f(float newX, float newY);
+    explicit Vector2f(const float* const newXY);
 
-        // Getters
-        float& x();
-        float& y();
-        float* data();
+    // Getters
+    float& x();
+    float& y();
+    float* data();
 
-        // Const getters.
-        float x() const;
-        float y() const;
-        const float* data() const;
+    // Const getters.
+    float x() const;
+    float y() const;
+    const float* data() const;
 
-        // Static getters
-        static Vector2f zero();
+    // Static getters
+    static Vector2f zero();
 
-    private: // Variables
-        float _x, _y;
-    };
+    // Operators
+    Vector2f& operator=(const Vector2f& newXY);
 
-    class Vector3f
-    {
-    public: // Functions
-        Vector3f();
-        Vector3f(const Vector3f& newXYZ);
-        explicit Vector3f(float newXYZ);
-        explicit Vector3f(float newX, float newY, float newZ);
-        explicit Vector3f(const float* const newXYZ);
-        explicit Vector3f(const Vector2f& newXY, float newZ);
+private:  // Variables
+    float _x, _y;
+};
 
-        // Getters
-        float& x();
-        float& y();
-        float& z();
-        float* data();
+class Vector3f
+{
+public:  // Functions
+    Vector3f();
+    Vector3f(const Vector3f& newXYZ);
+    explicit Vector3f(float newXYZ);
+    explicit Vector3f(float newX, float newY, float newZ);
+    explicit Vector3f(const float* const newXYZ);
+    explicit Vector3f(const Vector2f& newXY, float newZ);
 
-        // Const getters.
-        float x() const;
-        float y() const;
-        float z() const;
-        const float* data() const;
+    // Getters
+    float& x();
+    float& y();
+    float& z();
+    float* data();
 
-        // Static getters
-        static Vector3f zero();
+    // Const getters.
+    float x() const;
+    float y() const;
+    float z() const;
+    const float* data() const;
 
-    public: // Variables
-        float _x, _y, _z;
-    };
+    // Static getters
+    static Vector3f zero();
 
-    class Vector4f
-    {
-    public: // Functions
-        Vector4f();
-        Vector4f(const Vector4f& newXYZW);
-        explicit Vector4f(float newXYZW);
-        explicit Vector4f(float newX, float newY, float newZ, float newW);
-        explicit Vector4f(const float* const newXYZW);
-        explicit Vector4f(const Vector3f& newXYZ, float newW);
+public:  // Variables
+    float _x, _y, _z;
+};
 
-        // Getters.
-        float& x();
-        float& y();
-        float& z();
-        float& w();
-        float* data();
+class Vector4f
+{
+public:  // Functions
+    Vector4f();
+    Vector4f(const Vector4f& newXYZW);
+    explicit Vector4f(float newXYZW);
+    explicit Vector4f(float newX, float newY, float newZ, float newW);
+    explicit Vector4f(const float* const newXYZW);
+    explicit Vector4f(const Vector3f& newXYZ, float newW);
 
-        // Const getters.
-        float x() const;
-        float y() const;
-        float z() const;
-        float w() const;
-        const float* data() const;
+    // Getters.
+    float& x();
+    float& y();
+    float& z();
+    float& w();
+    float* data();
 
-        // Static getters
-        static Vector4f zero();
+    // Const getters.
+    float x() const;
+    float y() const;
+    float z() const;
+    float w() const;
+    const float* data() const;
 
-    public: // Variables
-        float _x, _y, _z, _w;
-    };
+    // Static getters
+    static Vector4f zero();
 
-    class Vector4b
-    {
-    public: // Functions
-        Vector4b();
-        Vector4b(const Vector4b& newXYZW);
-        explicit Vector4b(uint8_t newXYZW);
-        explicit Vector4b(uint8_t newX, uint8_t newY, uint8_t newZ, uint8_t newW);
-        explicit Vector4b(uint32_t newXYZW);
-        explicit Vector4b(const uint8_t* const newXYZW);
+public:  // Variables
+    float _x, _y, _z, _w;
+};
 
-        // Getters.
-        uint8_t& x();
-        uint8_t& y();
-        uint8_t& z();
-        uint8_t& w();
-        uint8_t* data();
+class Vector4b
+{
+public:  // Functions
+    Vector4b();
+    Vector4b(const Vector4b& newXYZW);
+    explicit Vector4b(uint8_t newXYZW);
+    explicit Vector4b(uint8_t newX, uint8_t newY, uint8_t newZ, uint8_t newW);
+    explicit Vector4b(uint32_t newXYZW);
+    explicit Vector4b(const uint8_t* const newXYZW);
 
-        // Const getters.
-        uint8_t x() const;
-        uint8_t y() const;
-        uint8_t z() const;
-        uint8_t w() const;
-        const uint8_t* data() const;
+    // Getters.
+    uint8_t& x();
+    uint8_t& y();
+    uint8_t& z();
+    uint8_t& w();
+    uint8_t* data();
 
-        // Static getters
-        static Vector4b zero();
+    // Const getters.
+    uint8_t x() const;
+    uint8_t y() const;
+    uint8_t z() const;
+    uint8_t w() const;
+    const uint8_t* data() const;
 
-    public: // Variables
-        uint8_t _x, _y, _z, _w;
-    };
+    // Static getters
+    static Vector4b zero();
 
-} // Namespace blackboxmath
+public:  // Variables
+    uint8_t _x, _y, _z, _w;
+};
+
+}  // namespace bbm
 
 // Inline header includes
 #include "Vector.inl"
