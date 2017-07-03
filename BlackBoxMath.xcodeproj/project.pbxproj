@@ -11,6 +11,9 @@
 		B18D652A1EE0B45F000455D4 /* Matrix.inl in Headers */ = {isa = PBXBuildFile; fileRef = B1FD32651ED7B66200B45D54 /* Matrix.inl */; };
 		B18D652B1EE0B45F000455D4 /* Rectangle.inl in Headers */ = {isa = PBXBuildFile; fileRef = B1FD32681ED7B66200B45D54 /* Rectangle.inl */; };
 		B18D652C1EE0B45F000455D4 /* Vector.inl in Headers */ = {isa = PBXBuildFile; fileRef = B1FD326B1ED7B66200B45D54 /* Vector.inl */; };
+		B1AAF4671EFC9DF50040FE7B /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1AAF4661EFC9DF50040FE7B /* Tests.m */; };
+		B1AAF4691EFC9DF50040FE7B /* libBlackBoxMath.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FD324F1ED7B5FD00B45D54 /* libBlackBoxMath.dylib */; };
+		B1AAF46F1EFC9E210040FE7B /* UtilitiesTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = B1AAF45C1EFC9D310040FE7B /* UtilitiesTests.mm */; };
 		B1FD326C1ED7B66200B45D54 /* BlackBoxMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1FD325D1ED7B66200B45D54 /* BlackBoxMath.cpp */; };
 		B1FD326D1ED7B66200B45D54 /* BlackBoxMath.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B1FD325E1ED7B66200B45D54 /* BlackBoxMath.hpp */; };
 		B1FD326E1ED7B66200B45D54 /* Color.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B1FD325F1ED7B66200B45D54 /* Color.hpp */; };
@@ -23,7 +26,22 @@
 		B1FD32761ED7B66200B45D54 /* Vector.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B1FD326A1ED7B66200B45D54 /* Vector.hpp */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B1AAF46A1EFC9DF50040FE7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1FD32471ED7B5FD00B45D54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1FD324E1ED7B5FD00B45D54;
+			remoteInfo = BlackBoxMath;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B1718FDC1EF09ABB00E12982 /* Utilities.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = Utilities.inl; path = Source/Utilities.inl; sourceTree = SOURCE_ROOT; };
+		B1AAF45C1EFC9D310040FE7B /* UtilitiesTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = UtilitiesTests.mm; path = Tests/UtilitiesTests.mm; sourceTree = SOURCE_ROOT; };
+		B1AAF4641EFC9DF50040FE7B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1AAF4661EFC9DF50040FE7B /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		B1AAF4681EFC9DF50040FE7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1D009811EE06383001E0289 /* BuildDebugProject.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildDebugProject.sh; sourceTree = "<group>"; };
 		B1D009821EE06383001E0289 /* BuildReleaseProject.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BuildReleaseProject.sh; sourceTree = "<group>"; };
 		B1D009831EE06383001E0289 /* CleanProject.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CleanProject.sh; sourceTree = "<group>"; };
@@ -50,6 +68,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B1AAF4611EFC9DF50040FE7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1AAF4691EFC9DF50040FE7B /* libBlackBoxMath.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1FD324C1ED7B5FD00B45D54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1AAF45E1EFC9D500040FE7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1AAF4651EFC9DF50040FE7B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B1AAF4661EFC9DF50040FE7B /* Tests.m */,
+				B1AAF45C1EFC9D310040FE7B /* UtilitiesTests.mm */,
+				B1AAF4681EFC9DF50040FE7B /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		B1D009801EE06383001E0289 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +131,9 @@
 				B1FD32511ED7B5FD00B45D54 /* Source */,
 				B1D009801EE06383001E0289 /* Scripts */,
 				B1D009881EE0660C001E0289 /* Other */,
+				B1AAF4651EFC9DF50040FE7B /* Tests */,
 				B1FD32501ED7B5FD00B45D54 /* Products */,
+				B1AAF45E1EFC9D500040FE7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				B1FD324F1ED7B5FD00B45D54 /* libBlackBoxMath.dylib */,
+				B1AAF4641EFC9DF50040FE7B /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +162,7 @@
 				B1FD32671ED7B66200B45D54 /* Rectangle.hpp */,
 				B1FD32681ED7B66200B45D54 /* Rectangle.inl */,
 				B1FD32691ED7B66200B45D54 /* Utilities.hpp */,
+				B1718FDC1EF09ABB00E12982 /* Utilities.inl */,
 				B1FD326A1ED7B66200B45D54 /* Vector.hpp */,
 				B1FD326B1ED7B66200B45D54 /* Vector.inl */,
 			);
@@ -148,6 +195,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B1AAF4631EFC9DF50040FE7B /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1AAF46C1EFC9DF50040FE7B /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				B1AAF4601EFC9DF50040FE7B /* Sources */,
+				B1AAF4611EFC9DF50040FE7B /* Frameworks */,
+				B1AAF4621EFC9DF50040FE7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1AAF46B1EFC9DF50040FE7B /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = B1AAF4641EFC9DF50040FE7B /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B1FD324E1ED7B5FD00B45D54 /* BlackBoxMath */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1FD325A1ED7B5FD00B45D54 /* Build configuration list for PBXNativeTarget "BlackBoxMath" */;
@@ -175,6 +240,9 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = BlackBoxCommittee;
 				TargetAttributes = {
+					B1AAF4631EFC9DF50040FE7B = {
+						CreatedOnToolsVersion = 9.0;
+					};
 					B1FD324E1ED7B5FD00B45D54 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -194,9 +262,20 @@
 			projectRoot = "";
 			targets = (
 				B1FD324E1ED7B5FD00B45D54 /* BlackBoxMath */,
+				B1AAF4631EFC9DF50040FE7B /* Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1AAF4621EFC9DF50040FE7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		B1D0097F1EE062F0001E0289 /* ShellScript */ = {
@@ -215,6 +294,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B1AAF4601EFC9DF50040FE7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1AAF46F1EFC9E210040FE7B /* UtilitiesTests.mm in Sources */,
+				B1AAF4671EFC9DF50040FE7B /* Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1FD324B1ED7B5FD00B45D54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,7 +314,45 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B1AAF46B1EFC9DF50040FE7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1FD324E1ED7B5FD00B45D54 /* BlackBoxMath */;
+			targetProxy = B1AAF46A1EFC9DF50040FE7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B1AAF46D1EFC9DF50040FE7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = blackboxcommittee.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B1AAF46E1EFC9DF50040FE7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = blackboxcommittee.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B1FD32581ED7B5FD00B45D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -397,6 +523,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B1AAF46C1EFC9DF50040FE7B /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1AAF46D1EFC9DF50040FE7B /* Debug */,
+				B1AAF46E1EFC9DF50040FE7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B1FD324A1ED7B5FD00B45D54 /* Build configuration list for PBXProject "BlackBoxMath" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

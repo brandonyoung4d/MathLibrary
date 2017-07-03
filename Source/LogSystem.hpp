@@ -35,23 +35,28 @@ enum class LogType
 std::string ToString(LogGroup group);
 std::string ToString(LogType type);
 
+/// Basic logging system that uses a static instance to allow global project logging.
 class LogSystem
 {
 public:  // Functions.
+    // Singleton functions.
+    static LogSystem& Get();
+
+    // Print functions.
+    void Print(LogType type, LogGroup group, const std::string& message, const std::string& fileName, uint32_t line);
+
+    // Question functions.
+    bool IsPrinting() const;
+    bool IsBreaking() const;
+    bool IsAsserting() const;
+
+private:  // Functions
     // Constructors.
     LogSystem();
     LogSystem(const LogSystem& logSystem) = delete;
 
     // Operators.
     void operator=(const LogSystem& logSystem) = delete;
-
-    // Singleton functions.
-    static LogSystem& Get();
-
-    void Print(LogType type, LogGroup group, const std::string& message, const std::string& fileName, uint32_t line);
-    bool IsPrinting() const;
-    bool IsBreaking() const;
-    bool IsAsserting() const;
 
 private:  // Variables.
     bool _isPrinting = true;
@@ -60,6 +65,7 @@ private:  // Variables.
     std::string _logFileName = "Log.txt";
     std::ofstream _logFile = std::ofstream();
 };
+
 }  // namespace bbm
 
 #define bbmLog(t, g, m)                                                                                   \
