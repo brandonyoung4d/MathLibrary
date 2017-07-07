@@ -22,6 +22,13 @@ inline const T& clamp(const T& min, const T& max, const T& input)
     return std::max<T>(min, std::min<T>(input, max));
 }
 
+template<class T>
+inline T step(const T& stepSize, const T& input)
+{
+    const T absoluteStepSize = std::abs(stepSize);
+    return static_cast<T>(std::ceil(input * 1.0 / absoluteStepSize) * absoluteStepSize);
+}
+
 template<class To, class From>
 inline To castTo(const From& from)
 {

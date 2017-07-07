@@ -16,6 +16,37 @@
 
 @implementation UtilitiesTests
 
+- (void)testStep {
+    constexpr int32_t intStepSize = 2;
+    XCTAssertEqual(bbm::step(intStepSize, -2), -2);
+    XCTAssertEqual(bbm::step(intStepSize, -1), 0);
+    XCTAssertEqual(bbm::step(intStepSize, 0), 0);
+    XCTAssertEqual(bbm::step(intStepSize, 1), 2);
+    XCTAssertEqual(bbm::step(intStepSize, 2), 2);
+
+    constexpr float floatStepSize = 0.5f;
+    XCTAssertEqual(bbm::step(floatStepSize, -0.9f), -0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.8f), -0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.7f), -0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.6f), -0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.5f), -0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.4f),  0.0f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.3f),  0.0f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.2f),  0.0f);
+    XCTAssertEqual(bbm::step(floatStepSize, -0.1f),  0.0f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.0f),  0.0f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.1f),  0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.2f),  0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.3f),  0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.4f),  0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.5f),  0.5f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.6f),  1.0f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.7f),  1.0f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.8f),  1.0f);
+    XCTAssertEqual(bbm::step(floatStepSize,  0.9f),  1.0f);
+    XCTAssertEqual(bbm::step(floatStepSize,  1.0f),  1.0f);
+}
+
 - (void)testCastTo {
     constexpr float floatHighest = std::numeric_limits<float>::max();
     constexpr float floatHigh = 1.0f;

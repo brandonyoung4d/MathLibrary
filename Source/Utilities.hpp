@@ -27,7 +27,7 @@ namespace bbm
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 template<class T>
-static constexpr char ClassName[] = "T";
+constexpr char ClassName[] = "T";
 CLASS_NAME_TEMPLATE(uint16_t);
 CLASS_NAME_TEMPLATE(uint32_t);
 CLASS_NAME_TEMPLATE(uint64_t);
@@ -49,6 +49,9 @@ inline T0 lerp(const T0 min, const T0 max, const T1 input);
 
 template<class T>
 inline const T& clamp(const T& min, const T& max, const T& input);
+
+template<class T>
+inline T step(const T& stepSize, const T& input);
 
 template<class To, class From>
 inline To castTo(const From& from);
