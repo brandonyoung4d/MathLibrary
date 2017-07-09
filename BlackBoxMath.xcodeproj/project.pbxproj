@@ -289,7 +289,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = /Users/brandonyoung/Projects/BlackBoxMath/Scripts/LintFiles.sh;
+			shellScript = Scripts/LintFiles.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -530,6 +530,7 @@
 				B1AAF46E1EFC9DF50040FE7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1FD324A1ED7B5FD00B45D54 /* Build configuration list for PBXProject "BlackBoxMath" */ = {
 			isa = XCConfigurationList;
