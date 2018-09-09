@@ -1,0 +1,57 @@
+{
+    "version": "0.1.0",
+    "tasks": [
+        {
+            "taskName": "clean",
+            "command": "./Scripts/CleanProject.sh",
+            "isShellCommand": true
+        },
+        {
+            "taskName": "debug",
+            "command": "./Scripts/BuildDebugProject.sh",
+            "isShellCommand": true,
+            "isBuildCommand": true,
+            "showOutput": "silent",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "taskName": "release",
+            "command": "./Scripts/BuildReleaseProject.sh",
+            "isShellCommand": true
+        },
+        {
+            "taskName": "test",
+            "command": "./Scripts/TestProject.sh",
+            "isShellCommand": true,
+            "isTestCommand": true,
+            "showOutput": "always",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        }
+    ]
+}
